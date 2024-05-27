@@ -1,0 +1,221 @@
+:root{
+  --bgColor: #333;
+  --textPrimary: #fff;
+  --textSecondary: #666;
+  --primaryColor: rgb(69, 189, 0);
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color:var(--bgColor);
+  color: var(--textPrimary);
+  font-size: 1.4rem;
+}
+main{
+  width: 600px;
+  margin: 50px auto;
+}
+h1{
+  color: var(--primaryColor);
+}
+h1 svg{
+  width: 40px;
+  fill: var(--primaryColor);
+}
+#header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px 6px 30px;
+}
+#buttons{
+  text-align: right;
+}
+#info{
+  color: var(--primaryColor);
+}
+button{
+  background: rgba(255,255,255,.2);
+  border:0;
+  color: rgba(255,255,255,.5);
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+div#game{
+  line-height:35px;
+  height:105px;
+  overflow: hidden;
+  position: relative;
+}
+div#game:focus{
+  outline:0;
+}
+#words{
+  filter: blur(5px);
+  color: var(--textSecondary);
+}
+
+#focus-error {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  padding-top: 35px;
+}
+#game:focus #focus-error{
+  display:none;
+}
+div.word{
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+  margin: 0 5px;
+}
+.letter.correct{
+  color: #fff;
+}
+.letter.incorrect{
+  color: #f55;
+}
+
+#cursor{
+  display:none;
+  width: 2px;
+  height: 1.6rem;
+  background: var(--primaryColor);
+  position: fixed;
+  top: 198px;
+  left: 18px;
+  animation: blink .3s infinite;
+}
+#game:focus #cursor{
+  display: block;
+}
+
+#game.over:focus #cursor{
+  display:none;
+}
+
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  max-width: 180px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff80;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+button:hover {
+  color: #ffffff;
+  background: #008cff;
+  border: 1px solid #008cff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 10px #008cff,
+    0 0 100px #000000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+table thead tr {
+  background-color: #333333;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+table th, table td {
+  padding: 12px 15px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #444444;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #2a2a2a;
+}
+
+table tbody tr:nth-of-type(odd) {
+  background-color: #1f1f1f;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #333333;
+}
+
+table tbody tr:hover {
+  background-color: #3a3a3a;
+}

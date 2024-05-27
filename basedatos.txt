@@ -1,0 +1,3 @@
+create database Meca;
+use Meca;
+create table DATOS(Nombre varchar(100), Buenas varchar(100), Malas varchar(100), Calificacion varchar(100))
