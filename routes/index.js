@@ -17,7 +17,7 @@ router.post('/insertar', async function(req, res) {
   var {usuario,buenas,malas,calificacion}=req.body;
   bd.query(`INSERT INTO DATOS (Nombre, Buenas, Malas, Calificacion) values (?, ?, ?, ?)`, [usuario, buenas, malas, calificacion], (error,resultados) => {
     if (error) {
-        console.log('Error',error)
+        console.log('Error_',error)
         return
       }});
   

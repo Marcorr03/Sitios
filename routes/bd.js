@@ -9,7 +9,7 @@ var conexion = mysql.createConnection({
  
 conexion.connect(function (error) {
   if (error)
-    console.log('Problemas de conexion con mysql')
+    console.log('Problemas de conexion')
   else
     console.log('Se inicio conexion')
 })
